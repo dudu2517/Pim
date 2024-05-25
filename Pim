@@ -1,0 +1,44 @@
+1	// Sistema de cadastro de usu á rio com cria ção de arquivo de texto 
+2	# include <stdio .h> 3 # include <stdlib .h> 
+4 
+5	// Função 	 para criar a pasta 
+6	int main () { 
+7	char nome [100] , empresa [100] , cnpj [20] , telefone [20] , endereco [200] 
+, email [100] , cidade [50]; 
+8 
+	9 	printf (" === Formulario de Cadastro ===\ n"); 
+10 
+11	printf (" Digite seu nome : "); 
+12	fgets(  nome , sizeof ( nome ), stdin ); 
+13	printf (" Digite o nome da empresa : "); 
+14	fgets ( empresa , sizeof ( empresa ), stdin ); 
+15	printf( " Digite o CNPJ : "); 
+16	fgets(  cnpj,  sizeof( cnpj 	 ), stdin ); 
+17	printf( " Digite o telefone : "); 
+18	fgets ( telefone , sizeof ( telefone ), stdin ); 
+19	printf (" Digite o endereco : "); 
+20	fgets( endereco 	,  sizeof( endereco 	 ), stdin ); 
+21	printf (" Digite o e- mail:  "); 
+22	fgets ( email , sizeof ( email ), stdin ); 
+23	printf (" Digite a cidade:  "); 24 fgets( cidade ,  sizeof ( cidade ), stdin ); 25 
+26	FILE * arquivo = fopen ("dados 	. txt 	 ", " w"); 
+27	if ( arquivo == NULL ) { 
+28	printf (" Erro ao abrir o arquivo !\n" 	); 
+29	return 1; 
+30	} 
+31 
+32	// Fun ção para digitar os dados 
+33	fprintf ( arquivo,  " === Formulario de Cadastro ===\n" 	); 
+34	fprintf(  arquivo,  " Nome : % s", nome ); 
+35	fprintf( arquivo 	,  " Empresa : %s" 	, empresa) ; 
+36	fprintf ( arquivo,  "CNPJ 	:  %s" 	, cnpj ); 
+37	fprintf ( arquivo , " Telefone : % s", telefone) ; 
+38	fprintf( arquivo 	,  " Endere ço: % s", endereco ); 
+39	fprintf ( arquivo , "Email :  %s" , email) ; 40 fprintf ( arquivo,  "Cidade :  % s", cidade ); 
+41 
+42 	fclose(  arquivo ); 
+43 
+44 	printf (" Dados salvos com sucesso em dados . txt \ n"); 45 
+46	// Finaliza ção do programa 
+47	return 0; 
+48	} 
